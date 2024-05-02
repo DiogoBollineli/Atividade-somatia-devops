@@ -17,13 +17,30 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:jsx-control-statements/recommended",
+      "plugin:security/recommended"
+    ],
+    "plugins": [
+      "react",
+      "@typescript-eslint",
+      "jsx-control-statements",
+      "security"
+    ],
+    "rules": {
+      "react/jsx-no-hardcoded-text": "error",  
+      "no-unused-vars": "warn",              
+      "semi": ["error", "never"],             
+      "security/detect-unsafe-regex": "error" }
   },
   "browserslist": {
     "production": [
