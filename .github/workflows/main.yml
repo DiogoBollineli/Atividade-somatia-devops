@@ -38,5 +38,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: pull and run Docker image
         run: |
-          docker pull ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${TAG}
-          docker run ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${TAG}
+          docker pull $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG)
+          docker run $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG)
