@@ -2,14 +2,14 @@ name: PipelineAS1
 
 on:
   push:
-    branches: ["main"]
+    branches: ["alpha"]
   pull_request:
-    branches: ["main"]
+    branches: ["alpha"]
   workflow_dispatch: 
 
 jobs:
   build-job:
-      runs-on: docker:latest 
+      runs-on: docker-latest 
       steps:
         - name: Checkout code
           uses: actions/checkout@v3 
@@ -42,6 +42,11 @@ jobs:
           run: npm install --save-dev eslint eslint-plugin-security
         - name: Run ESLint scan
           run: npm run lint 
+        - name: Upload lint report
+          uses: actions/upload-artifact@v3
+          with:
+            name: lint-report
+            path: lint-report.zip
             
 
   deploy-job:
