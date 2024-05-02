@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN NODE_ENV=development npm build
+RUN npm run build
 
 FROM nginx:alpine
 
