@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx}"
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
+    "upload-lint-report": "eslint src/**/*.{js,jsx,ts,tsx} | tee lint-report.json && zip -r lint-report.zip lint-report.json"
   },
   "eslintConfig": {
     "extends": [
